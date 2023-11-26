@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
-# nginx web server listening on port 80
-# returns a page that contains the string "Hello World!"
-
-sudo apt update -y
-sudo apt install -y nginx
-echo 'Hello World!' > /var/www/html/index.nginx-debian.html
+# installs the reverse proxy - Nginx
+sudo apt update && upgrade
+sudo apt install nginx -y 
+echo "Holberton School" | sudo tee /var/www/html/index.html
 sudo service nginx start
